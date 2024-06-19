@@ -1,11 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
-using System.Diagnostics;
+﻿using System.Diagnostics;
 
-// create a new instance of the System.Random class
-// and store a reference to the object in a variable named number
 Random number = new Random();
 
-// call the Random.Next() method on the number object two times,
 int firstNumber = number.Next(0, 101);
 int secondNumber = number.Next(0, 101);
 int correctAnswer = 0;
@@ -18,9 +14,7 @@ int correctAnswerForSubtraction = 0;
 int correctAnswerForMultiplication = 0;
 int correctAnswerForDivision = 0;
 int correctAnswerForSquare = 0;
-// decimal resultDivision = 0;
 
-// bool correctAnswer = false;
 bool validEntry = false;
 
 string? readInputResult;
@@ -29,12 +23,9 @@ string menuSelection = "";
 string mathGame = "";
 string lapTime = "";
 
-// array used to store runtime data
 int[,] scores = new int[,] { { 1, 0 }, { 2, 0 }, { 3, 0 }, { 4, 0 }, { 5, 0 } };
-// int[,] games = new int[,] { { 0, 0 }, { 0, 0 }, { 0, 0 }, { 0, 0 } };
 int[] score = new int[] { 0, 0, 0, 0, 0 };
 string[] mathOperations = new string[] { "Addition", "Subtraction", "Multiplication", "Division", "Square2d" };
-// string[] mathGamesSum = new string[13];
 string[] mathGames = new string[33];
 string[] lapTimes = new string[33];
 
@@ -43,37 +34,11 @@ int rounds = 0;
 int counterLap = 0;
 int questionsToPlay = 0;
 
-// async void CountDown()
-// {
-//     // STOPWATCH
-//     // var stopWatch = new Stopwatch();
-//     // stopWatch.Start();
-//     var stopWatch = Stopwatch.StartNew();
-//     // var startTime = Stopwatch.GetTimestamp();
-//     await Task.Delay(3000);
-//     // var endTime = Stopwatch.GetTimestamp();
-//     // var interval = Stopwatch.GetElapsedTime(startTime, endTime);
-//     // stopWatch.Stop();
-//     Console.WriteLine(stopWatch.Elapsed.Seconds);
-//     // Console.WriteLine(stopWatch.ElapsedMilliseconds);
-//     // Console.WriteLine(stopWatch.ElapsedTicks);
-//     // Console.WriteLine(interval);
-
-// }
-// // CountDown();
-// [ ] Add a timer (countdown) to track how long the user takes to finish the game;
-// var stopWatch = Stopwatch.StartNew();
-// await Task.Delay(3000);
-// stopWatch.Stop(); 
-// Console.WriteLine(stopWatch.Elapsed.Seconds);
-
-
 Console.WriteLine();
 Console.WriteLine("Pick the number of operations you want to calculate:");
 readInputResult = Console.ReadLine();
 validEntry = int.TryParse(readInputResult, out questionsToPlay);
 Console.WriteLine($"Rounds to play: {questionsToPlay}");
-
 
 do
 {
@@ -91,7 +56,6 @@ do
     Console.WriteLine(" 8. To display the previous math Games");
     Console.WriteLine(" 9. To play the Random Math Game");
     Console.WriteLine(" 10. To display the previous time lapses for RandomGames");
-
 
     Console.WriteLine();
     Console.WriteLine("Enter your selection number (or type Exit to exit the program)");
@@ -127,7 +91,6 @@ do
 
         case "1":
             questionsToPlay--;
-
             GenerateRandomNumbers();
             MakeSum();
 
@@ -137,7 +100,6 @@ do
 
         case "2":
             questionsToPlay--;
-
             GenerateRandomNumbers();
             MakeSubtraction();
 
@@ -147,7 +109,6 @@ do
 
         case "3":
             questionsToPlay--;
-
             GenerateRandomNumbers();
             MakeMultiplication();
 
@@ -157,18 +118,7 @@ do
 
         case "4":
             questionsToPlay--;
-
-            // GenerateRandomNumbers();
             MakeDivisionForDecimals();
-
-            // catch (DivideByZeroException excMsg)
-            // {
-            //     Console.WriteLine("catch 4");
-            //     Console.WriteLine(excMsg.Message);
-            //     GenerateRandomNumbers();
-            //     MakeDivisionForDecimals();
-            //     // continue;
-            // }
 
             Console.WriteLine("\n\rPress the Enter key to continue.");
             readResult = Console.ReadLine();
@@ -176,28 +126,9 @@ do
 
         case "5":
             questionsToPlay--;
-
-            // GenerateRandomNumbers();
             MakeDivisionForIntegers();
 
-            // catch (DivideByZeroException excMsg)
-            // {
-            //     Console.WriteLine("catch 5 ");
-            //     Console.WriteLine(excMsg.Message);
-            // }
-
-            // LEARN HOW TO IMPLEMENT THIS:
-
-            // Obtain a new value for first and second numbers:
-            // GenerateRandomNumbers();
-
-            // Call MakeDivisionForIntegers using the new values:
-            // MakeDivisionForIntegers();
-
-            // Still be able to handle exception:
-            // Unhandled exception. System.DivideByZeroException: Attempted to divide by zero.
-            // continue;
-
+            Console.WriteLine();
             Console.WriteLine("\n\rPress the Enter key to continue.");
             readResult = Console.ReadLine();
             break;
@@ -205,7 +136,6 @@ do
 
         case "6":
             questionsToPlay--;
-
             GenerateRandomNumbers();
             MakeSquare();
 
@@ -243,31 +173,20 @@ do
                     Console.WriteLine(mathGames[i]);
                 }
             }
-            // Console.WriteLine();
             Console.WriteLine("\n\rPress the Enter key to continue.");
             readResult = Console.ReadLine();
             break;
 
         case "9":
-
             questionsToPlay--;
 
             Console.WriteLine("Random Math Game:");
             Console.WriteLine("Pick the number of questions:");
             readInputResult = Console.ReadLine();
             validEntry = int.TryParse(readInputResult, out rounds);
-            // Console.WriteLine($"Rounds to play: {rounds}");
-            // Console.WriteLine($"Questions to play: {questionsToPlay}");
-
-            // if (rounds > questionsToPlay)
-            // {
-            //     Console.WriteLine($"Rounds to play: {rounds}");
-            //     Console.WriteLine($"Questions to play: {questionsToPlay}");
-            // }
 
             var stopWatch = Stopwatch.StartNew();
-            // await Task.Delay(3000);
-            // create random operations
+
             while (rounds > 0)
             {
                 Console.WriteLine($"Rounds to play: {rounds}");
@@ -280,7 +199,6 @@ do
             Console.WriteLine($"You took: {stopWatch.Elapsed.Seconds} seconds to complete the game.");
 
             counterLap++;
-            // add this to laptimes array
             lapTime = String.Format($"{stopWatch.Elapsed.Seconds}");
             lapTimes[counterLap] = lapTime;
 
@@ -300,7 +218,6 @@ do
                     Console.Write($"\t{lapTimes[i]} seconds\n");
                 }
             }
-            // Console.WriteLine();
             Console.WriteLine("\n\rPress the Enter key to continue.");
             readResult = Console.ReadLine();
             break;
@@ -334,11 +251,8 @@ void MakeSum()
 
     total = firstNumber + secondNumber;
 
-    // add this to mathGames array
     mathGame = String.Format($"{firstNumber} + {secondNumber} = {total}");
-    // Console.WriteLine(mathGame);
     mathGames[counter] = mathGame;
-    // Console.WriteLine(mathGames[counter]);
 
     Console.WriteLine($"Calculate the Sum: {firstNumber} + {secondNumber}");
 
@@ -357,11 +271,9 @@ void MakeSum()
         Console.WriteLine($"Correct: {total}");
     }
 
-
     evenOrOdd();
 
     scores[0, 1] = correctAnswerForSum;
-    // Console.WriteLine($"Total Correct answers for sum: {scores[0, 1]}");
     Console.WriteLine();
 
 }
@@ -391,9 +303,6 @@ void MakeSubtraction()
     {
         Console.WriteLine("Wrong answer for Subtraction ");
         Console.WriteLine($"Correct: {total}");
-        // correctAnswer--;
-        // correctAnswerForSubtraction--;
-
     }
 
     evenOrOdd();
@@ -405,7 +314,6 @@ void MakeSubtraction()
 
 void MakeMultiplication()
 {
-    // rounds -= 1;
     rounds--;
     counter++;
 
@@ -428,15 +336,11 @@ void MakeMultiplication()
     {
         Console.WriteLine("Wrong answer for Multiplication ");
         Console.WriteLine($"Correct: {total}");
-        // correctAnswer--;
-        // correctAnswerForMultiplication--;
-
     }
 
     evenOrOdd();
 
     scores[2, 1] = correctAnswerForMultiplication;
-    // Console.WriteLine($"Total Correct answers for multiplication: {scores[2, 1]}");
     Console.WriteLine();
 }
 
@@ -447,7 +351,6 @@ void MakeDivisionForDecimals()
     while (secondNumber == 0)
     {
         GenerateRandomNumbers();
-
         // throw new DivideByZeroException("Attempted to divide by zero.");
     }
 
@@ -462,7 +365,6 @@ void MakeDivisionForDecimals()
 
         rounds--;
         counter++;
-        // Console.WriteLine($"counter {counter}");
 
         decimal firstNum = (decimal)firstNumber;
 
@@ -478,8 +380,6 @@ void MakeDivisionForDecimals()
 
         mathGame = String.Format($"{firstNumber} / {secondNumber} = {totalRounded}");
         mathGames[counter] = mathGame;
-        // Console.WriteLine($"{mathGames[counter]}");
-
 
         if (resultDecimal == totalRounded)
         {
@@ -491,25 +391,20 @@ void MakeDivisionForDecimals()
         {
             Console.WriteLine("Wrong answer for Division ");
             Console.WriteLine($"Correct: {totalRounded}");
-            // correctAnswer--;
-            // correctAnswerForDivision--;
         }
     }
     // else
     // {
     //     throw new DivideByZeroException("Attempted to divide by zero.");
     // }
-
     scores[3, 1] = correctAnswerForDivision;
-    // Console.WriteLine($"Total Correct answers for division: {scores[3, 1]}");
     Console.WriteLine();
 }
 
 void MakeDivisionForIntegers()
 {
-
+    // TODO: refactor here
     GenerateRandomNumbers();
-
 
     while (secondNumber == 0)
     {
@@ -524,15 +419,12 @@ void MakeDivisionForIntegers()
         {
             GenerateRandomNumbers();
         }
-
-
     }
 
     rounds--;
     counter++;
 
-    total = (firstNumber / secondNumber);
-    // Console.WriteLine($" {total} ");
+    total = firstNumber / secondNumber;
 
     Console.WriteLine($"Calculate the Division: {firstNumber} / {secondNumber}");
 
@@ -557,7 +449,6 @@ void MakeDivisionForIntegers()
     evenOrOdd();
 
     scores[3, 1] = correctAnswerForDivision;
-    // Console.WriteLine($"Total Correct answers for division: {scores[3, 1]}");
     Console.WriteLine();
 
 }
@@ -569,11 +460,8 @@ void MakeSquare()
 
     total = firstNumber * firstNumber;
 
-    // add this to mathGames array
     mathGame = String.Format($"{firstNumber} * {firstNumber} = {total}");
-    // Console.WriteLine(mathGame);
     mathGames[counter] = mathGame;
-    // Console.WriteLine(mathGames[counter]);
 
     Console.WriteLine($"Calculate the Square: {firstNumber} x {firstNumber}");
 
@@ -595,7 +483,6 @@ void MakeSquare()
     evenOrOdd();
 
     scores[4, 1] = correctAnswerForSquare;
-    // Console.WriteLine($"Total Correct answers for sum: {scores[0, 1]}");
     Console.WriteLine();
 
 }
@@ -604,7 +491,6 @@ void GenerateRandomGame()
 {
     // create some logic to random operations
     int randomMathGame = number.Next(mathOperations.Length);
-    // Console.WriteLine($"random {randomMathGame}");
 
     if (randomMathGame == 1)
     {
@@ -646,14 +532,7 @@ void evenOrOdd()
     }
 }
 
-// int firstSum = AddNumbers(firstNumber, secondNumber);
-// Console.WriteLine($"First sum: {firstSum}");
 
-// static int AddNumbers(int firstAddend, int secondAddend)
-// {
-//     int totalAddition = firstAddend + secondAddend;
-//     return totalAddition;
-// }
 
 
 

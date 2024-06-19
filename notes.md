@@ -46,18 +46,6 @@ in launch.json file:
 
 [x] Implement function for square;
 
-[ ]
-
-                -> Obtain a new value for first and second numbers:
-                GenerateRandomNumbers();
-
-                -> Call MakeDivisionForIntegers() or  MakeDivisionForDecimals() using the new values:
-                MakeDivisionForIntegers();
-                MakeDivisionForDecimals();
-
-                -> Still be able to handle exception that are already been catched:
-                Unhandled exception. System.DivideByZeroException: Attempted to divide by zero.
-
     [x] change functions to static / public?;
     [x] change functions to receive parameters?;
     [x] checked and unchecked statements;
@@ -67,6 +55,21 @@ in launch.json file:
 [ ] Implement validation for win / lose;
 
 <!--
+
+
+ -> Obtain a new value for first and second numbers:
+                GenerateRandomNumbers();
+
+                -> Call MakeDivisionForIntegers() or  MakeDivisionForDecimals() using the new values:
+                MakeDivisionForIntegers();
+                MakeDivisionForDecimals();
+
+                -> Still be able to handle exception that are already been catched:
+                Unhandled exception. System.DivideByZeroException: Attempted to divide by zero.
+
+
+
+
 -> functions / methods:
 
 <visibility> <return type> <name> (parameters)
@@ -85,3 +88,28 @@ hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
 hint: 'development'. The just-created branch can be renamed via this command:
 hint:
 hint:   git branch -m <name> -->
+<!--
+
+// async void CountDown()
+// {
+//     // STOPWATCH
+//     // var stopWatch = new Stopwatch();
+//     // stopWatch.Start();
+//     var stopWatch = Stopwatch.StartNew();
+//     // var startTime = Stopwatch.GetTimestamp();
+//     await Task.Delay(3000);
+//     // var endTime = Stopwatch.GetTimestamp();
+//     // var interval = Stopwatch.GetElapsedTime(startTime, endTime);
+//     // stopWatch.Stop();
+//     Console.WriteLine(stopWatch.Elapsed.Seconds);
+//     // Console.WriteLine(stopWatch.ElapsedMilliseconds);
+//     // Console.WriteLine(stopWatch.ElapsedTicks);
+//     // Console.WriteLine(interval);
+
+// }
+// // CountDown();
+// [ ] Add a timer (countdown) to track how long the user takes to finish the game;
+// var stopWatch = Stopwatch.StartNew();
+// await Task.Delay(3000);
+// stopWatch.Stop();
+// Console.WriteLine(stopWatch.Elapsed.Seconds); -->
