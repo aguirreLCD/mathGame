@@ -16,6 +16,15 @@ in launch.json file:
 
 # Work in progress...
 
+TODO:
+
+[x] Complete the FreeCodeCamp C# Certification
+<https://www.freecodecamp.org/certification/fcc980ef4cd-edc3-4200-a1f2-db302c997d4b/foundational-c-sharp-with-microsoft>
+
+[ ] Register to https://www.thecsharpacademy.com;
+
+(From https://www.thecsharpacademy.com)
+
 [x] Create a Math game containing the 4 basic operations;
 
 [x] The divisions should result on INTEGERS ONLY and dividends should go from 0 to 100. Example: Your app shouldn't present the division 7/2 to the user, since it doesn't result in an integer.
@@ -27,7 +36,7 @@ in launch.json file:
 
 [x] You don't need to record results on a database. Once the program is closed the results will be deleted.
 
-[ ] Save C# / .NET code on Github;
+[x] Save C# / .NET code on Github;
 
 - [x] dotnet new gitignore
 
@@ -35,12 +44,15 @@ in launch.json file:
 
 [x] Add a timer (countdown) to track how long the user takes to finish the game;
 
+[ ] checking for:
+
 - Stopwatch;
 - TimeSpan;
+- ...
 
-[x] Add a function that let's the user pick the number of questions -> only on Randon Game;
+[x] Add a function that let's the user pick the number of questions;
 
-[x] Create a 'Random Game' option where the players will be presented with questions from random operations;
+[x] Create a 'Random Game' option where the player will be presented with questions from random operations;
 
 [x] Implement function for even / odd;
 
@@ -54,9 +66,9 @@ in launch.json file:
 
 [ ] Implement validation for win / lose;
 
+[ ] Deploy / which hosting services
+
 <!--
-
-
  -> Obtain a new value for first and second numbers:
                 GenerateRandomNumbers();
 
@@ -66,8 +78,6 @@ in launch.json file:
 
                 -> Still be able to handle exception that are already been catched:
                 Unhandled exception. System.DivideByZeroException: Attempted to divide by zero.
-
-
 
 
 -> functions / methods:

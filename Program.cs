@@ -128,6 +128,10 @@ do
             questionsToPlay--;
             MakeDivisionForIntegers();
 
+            // try catch 
+            // What is the recommended approach for catching exceptions in C#?
+            //   Catch only the exceptions that your code knows how to recover from.
+            
             Console.WriteLine();
             Console.WriteLine("\n\rPress the Enter key to continue.");
             readResult = Console.ReadLine();
@@ -510,12 +514,12 @@ void GenerateRandomGame()
     else if (randomMathGame == 4)
     {
         GenerateRandomNumbers();
-        MakeSquare();
+        MakeDivisionForIntegers();
     }
     else
     {
         GenerateRandomNumbers();
-        MakeDivisionForIntegers();
+        MakeSquare();
     }
 
 }
