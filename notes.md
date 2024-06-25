@@ -68,6 +68,8 @@ TODO:
 
 [ ] Deploy / which hosting services
 
+[ ] https://www.codewars.com
+
 <!--
  -> Obtain a new value for first and second numbers:
                 GenerateRandomNumbers();
@@ -88,38 +90,3 @@ logic code
 } -->
 
 <!--
-hint: Using 'master' as the name for the initial branch. This default branch name
-hint: is subject to change. To configure the initial branch name to use in all
-hint: of your new repositories, which will suppress this warning, call:
-hint:
-hint:   git config --global init.defaultBranch <name>
-hint:
-hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
-hint: 'development'. The just-created branch can be renamed via this command:
-hint:
-hint:   git branch -m <name> -->
-<!--
-
-// async void CountDown()
-// {
-//     // STOPWATCH
-//     // var stopWatch = new Stopwatch();
-//     // stopWatch.Start();
-//     var stopWatch = Stopwatch.StartNew();
-//     // var startTime = Stopwatch.GetTimestamp();
-//     await Task.Delay(3000);
-//     // var endTime = Stopwatch.GetTimestamp();
-//     // var interval = Stopwatch.GetElapsedTime(startTime, endTime);
-//     // stopWatch.Stop();
-//     Console.WriteLine(stopWatch.Elapsed.Seconds);
-//     // Console.WriteLine(stopWatch.ElapsedMilliseconds);
-//     // Console.WriteLine(stopWatch.ElapsedTicks);
-//     // Console.WriteLine(interval);
-
-// }
-// // CountDown();
-// [ ] Add a timer (countdown) to track how long the user takes to finish the game;
-// var stopWatch = Stopwatch.StartNew();
-// await Task.Delay(3000);
-// stopWatch.Stop();
-// Console.WriteLine(stopWatch.Elapsed.Seconds); -->

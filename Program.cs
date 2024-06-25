@@ -131,7 +131,7 @@ do
             // try catch 
             // What is the recommended approach for catching exceptions in C#?
             //   Catch only the exceptions that your code knows how to recover from.
-            
+
             Console.WriteLine();
             Console.WriteLine("\n\rPress the Enter key to continue.");
             readResult = Console.ReadLine();
@@ -235,16 +235,11 @@ void GenerateRandomNumbers()
     firstNumber = number.Next(0, 101);
     secondNumber = number.Next(0, 101);
 
-    // Console.WriteLine($": {firstNumber}");
-    // Console.WriteLine($": {secondNumber}");
-
     if ((firstNumber == 0) && (secondNumber == 0))
     {
         firstNumber = number.Next(0, 101);
         secondNumber = number.Next(0, 101);
     }
-    // Console.WriteLine($": {firstNumber}");
-    // Console.WriteLine($": {secondNumber}");
 
 }
 
@@ -259,9 +254,15 @@ void MakeSum()
     mathGames[counter] = mathGame;
 
     Console.WriteLine($"Calculate the Sum: {firstNumber} + {secondNumber}");
-
     readInputResult = Console.ReadLine();
     validEntry = int.TryParse(readInputResult, out result);
+
+    while (validEntry == false)
+    {
+        Console.WriteLine("This is not a valid input. Please enter a number and then press Enter:");
+        readInputResult = Console.ReadLine();
+        validEntry = int.TryParse(readInputResult, out result);
+    }
 
     if (result == total)
     {
@@ -293,9 +294,15 @@ void MakeSubtraction()
     mathGames[counter] = mathGame;
 
     Console.WriteLine($"Calculate the Subtraction: {firstNumber} - {secondNumber}");
-
     readInputResult = Console.ReadLine();
     validEntry = int.TryParse(readInputResult, out result);
+
+    while (validEntry == false)
+    {
+        Console.WriteLine("This is not a valid input. Please enter a number and then press Enter:");
+        readInputResult = Console.ReadLine();
+        validEntry = int.TryParse(readInputResult, out result);
+    }
 
     if (result == total)
     {
@@ -326,9 +333,16 @@ void MakeMultiplication()
     mathGames[counter] = mathGame;
 
     Console.WriteLine($"Calculate the Multiplication: {firstNumber} * {secondNumber}");
-
     readInputResult = Console.ReadLine();
     validEntry = int.TryParse(readInputResult, out result);
+
+    while (validEntry == false)
+    {
+        Console.WriteLine("This is not a valid input. Please enter a number and then press Enter:");
+        readInputResult = Console.ReadLine();
+        validEntry = int.TryParse(readInputResult, out result);
+
+    }
 
     if (result == total)
     {
@@ -355,59 +369,48 @@ void MakeDivisionForDecimals()
     while (secondNumber == 0)
     {
         GenerateRandomNumbers();
-        // throw new DivideByZeroException("Attempted to divide by zero.");
     }
 
-    if (secondNumber != 0)
+    rounds--;
+    counter++;
+
+    decimal firstNum = (decimal)firstNumber;
+    decimal totalForDivision = firstNum / secondNumber;
+    decimal totalRounded = Math.Round(totalForDivision, 2);
+
+    mathGame = String.Format($"{firstNumber} / {secondNumber} = {totalRounded}");
+    mathGames[counter] = mathGame;
+
+    decimal resultDecimal = 0;
+    Console.WriteLine($"Calculate the Division: {firstNumber} / {secondNumber}");
+    readInputResult = Console.ReadLine();
+    validEntry = decimal.TryParse(readInputResult, out resultDecimal);
+
+    while (validEntry == false)
     {
-        // throw new DivideByZeroException("Attempted to divide by zero.");
-
-        // else if ((firstNumber == 0) && (secondNumber == 0))
-        // {
-        //     throw new DivideByZeroException("Attempted to divide by zero.");
-        // }
-
-        rounds--;
-        counter++;
-
-        decimal firstNum = (decimal)firstNumber;
-
-        decimal totalForDivision = firstNum / secondNumber;
-
-        Console.WriteLine($"Calculate the Division: {firstNumber} / {secondNumber}");
-
+        Console.WriteLine("This is not a valid input. Please enter a number and then press Enter:");
         readInputResult = Console.ReadLine();
-        decimal resultDecimal = 0;
         validEntry = decimal.TryParse(readInputResult, out resultDecimal);
-
-        decimal totalRounded = Math.Round(totalForDivision, 2);
-
-        mathGame = String.Format($"{firstNumber} / {secondNumber} = {totalRounded}");
-        mathGames[counter] = mathGame;
-
-        if (resultDecimal == totalRounded)
-        {
-            Console.WriteLine("Correct answer for Division ");
-            correctAnswer++;
-            correctAnswerForDivision++;
-        }
-        else
-        {
-            Console.WriteLine("Wrong answer for Division ");
-            Console.WriteLine($"Correct: {totalRounded}");
-        }
     }
-    // else
-    // {
-    //     throw new DivideByZeroException("Attempted to divide by zero.");
-    // }
+
+    if (resultDecimal == totalRounded)
+    {
+        Console.WriteLine("Correct answer for Division ");
+        correctAnswer++;
+        correctAnswerForDivision++;
+    }
+    else
+    {
+        Console.WriteLine("Wrong answer for Division ");
+        Console.WriteLine($"Correct: {totalRounded}");
+    }
+
     scores[3, 1] = correctAnswerForDivision;
     Console.WriteLine();
 }
 
 void MakeDivisionForIntegers()
 {
-    // TODO: refactor here
     GenerateRandomNumbers();
 
     while (secondNumber == 0)
@@ -415,28 +418,23 @@ void MakeDivisionForIntegers()
         GenerateRandomNumbers();
     }
 
-    while (firstNumber % secondNumber != 0)
-    {
-        GenerateRandomNumbers();
-
-        while (secondNumber == 0)
-        {
-            GenerateRandomNumbers();
-        }
-    }
-
     rounds--;
     counter++;
 
     total = firstNumber / secondNumber;
-
-    Console.WriteLine($"Calculate the Division: {firstNumber} / {secondNumber}");
-
     mathGame = String.Format($"{firstNumber} / {secondNumber} = {total}");
     mathGames[counter] = mathGame;
 
+    Console.WriteLine($"Calculate the Division: {firstNumber} / {secondNumber}");
     readInputResult = Console.ReadLine();
     validEntry = int.TryParse(readInputResult, out result);
+
+    while (validEntry == false)
+    {
+        Console.WriteLine("This is not a valid input. Please enter a number and then press Enter:");
+        readInputResult = Console.ReadLine();
+        validEntry = int.TryParse(readInputResult, out result);
+    }
 
     if (result == total)
     {
@@ -451,7 +449,6 @@ void MakeDivisionForIntegers()
     }
 
     evenOrOdd();
-
     scores[3, 1] = correctAnswerForDivision;
     Console.WriteLine();
 
@@ -468,9 +465,15 @@ void MakeSquare()
     mathGames[counter] = mathGame;
 
     Console.WriteLine($"Calculate the Square: {firstNumber} x {firstNumber}");
-
     readInputResult = Console.ReadLine();
     validEntry = int.TryParse(readInputResult, out result);
+
+    while (validEntry == false)
+    {
+        Console.WriteLine("This is not a valid input. Please enter a number and then press Enter:");
+        readInputResult = Console.ReadLine();
+        validEntry = int.TryParse(readInputResult, out result);
+    }
 
     if (result == total)
     {
@@ -488,7 +491,6 @@ void MakeSquare()
 
     scores[4, 1] = correctAnswerForSquare;
     Console.WriteLine();
-
 }
 
 void GenerateRandomGame()
